@@ -24,10 +24,10 @@ author:
   # Biographic information
   avatar           : "profile_scotland.png"
   name             : "Sara Pérez-Vieites"
-  pronouns         : "she/her"
-  bio              : "Postdoctoral Researcher."
+  pronouns         : #"she/her"
+  bio              : "I am a postdoctoral researcher at Aalto University and the Finnish Center for Artificial Intelligence (FCAI), working on approximate inference and Bayesian experimental design."
   location         : "Espoo, Finland"
-  employer         : "Aalto University, FCAI"
+  employer         : #"Aalto University, FCAI"
   uri              : # URL
   email            : "sara.perezvieites@aalto.fi" 
 
