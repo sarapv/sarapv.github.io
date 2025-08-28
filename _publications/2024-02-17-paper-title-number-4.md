@@ -2,8 +2,8 @@
 title: "Paper Title Number 4"
 collection: publications
 category: conferences
-permalink: /publication/2024-02-17-paper-title-number-4
-excerpt: 'This paper is about fixing template issue #693.'
+# permalink: /publication/2024-02-17-paper-title-number-4  # Commented out - no individual page
+abstract: 'This paper addresses template issue #693 by implementing a novel approach to bug fixing. We propose a systematic methodology that reduces error rates by 40% compared to existing solutions. Our experimental validation demonstrates the effectiveness of the approach across multiple test scenarios.'
 date: 2024-02-17
 venue: 'GitHub Journal of Bugs'
 paperurl: 'http://academicpages.github.io/files/paper3.pdf'
