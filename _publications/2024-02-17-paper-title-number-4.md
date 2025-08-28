@@ -6,9 +6,9 @@ category: conferences
 abstract: 'One of the main challenges in nonlinear Bayesian filtering is the so-called curse of dimensionality, that is, the computational complexity increase and associated performance degradation in high-dimensional systems. In the context of particle filtering (PF), a possible solution to mitigate such performance loss is the multiple PF (MPF) approach, where the original state is partitioned into several lower dimensional subspaces, and a set of interconnected PFs are used to characterize the marginal subspace posteriors. Two key issues are: i) how to partition the state, which is application dependent, and ii) how to let the filters (i.e., subspaces) fuse or merge depending on the time-varying conditions of the system, in order to improve the overall estimation performance. We propose a probabilistic approach to the adaptive state-partitioning problem within the MPF, which is based on the computation of subspace second order statistics. An illustrative multiple target tracking example is considered to support the discussion.'
 date: 2019-12-15
 venue: '2019 IEEE 8th International Workshop on Computational Advances in Multi-Sensor Adaptive Processing (CAMSAP)'
-paperurl: 'http://academicpages.github.io/files/paper/perez2019second.pdf'
-doiurl: 'https://doi.org/10.1109/CAMSAP45676.2019.9022446'
-arxivurl: 'https://arxiv.org/abs/1234.5678'
+paperurl: 'http://sarapv.github.io/files/paper/perez2019second.pdf'
+doiurl: 'https://doi.org/10.1109/CAMSAP45676.2019.9022449'
+#arxivurl: 'https://arxiv.org/abs/1234.5678'
 bibtex: "@inproceedings{perez2019second,
   title={Second Order Subspace Statistics for Adaptive State-Space Partitioning in Multiple Particle Filtering},
   author={Pérez-Vieites, Sara and Vilà-Valls, Jordi and Bugallo, Monica F. and Míguez, Joaquín and Closas, Pau},
