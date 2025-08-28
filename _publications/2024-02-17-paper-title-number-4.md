@@ -9,16 +9,15 @@ venue: '2019 IEEE 8th International Workshop on Computational Advances in Multi-
 paperurl: 'http://academicpages.github.io/files/paper/perez2019second.pdf'
 doiurl: 'https://doi.org/10.1109/CAMSAP45676.2019.9022446'
 arxivurl: 'https://arxiv.org/abs/1234.5678'
-bibtex: '@inproceedings{perez2019second,
+bibtex: "@inproceedings{perez2019second,
   title={Second Order Subspace Statistics for Adaptive State-Space Partitioning in Multiple Particle Filtering},
-  author={Pérez-Vieites, Sara and Vilà-Valls, Jordi and Bugallo, Monica F and Míguez, Joaquín and Closas, Pau},
+  author={Pérez-Vieites, Sara and Vilà-Valls, Jordi and Bugallo, Monica F. and Míguez, Joaquín and Closas, Pau},
   booktitle={2019 IEEE 8th International Workshop on Computational Advances in Multi-Sensor Adaptive Processing (CAMSAP)},
   pages={609--613},
   year={2019},
   organization={IEEE},
   doi={10.1109/CAMSAP45676.2019.9022446}
-}'
+}"
 citation: 'Pérez-Vieites, S., Vilà-Vals, J., Bugallo, M. F., Míguez, J., & Closas, P. (2019). &quot;Second Order Subspace Statistics for Adaptive State-Space Partitioning in Multiple Particle Filtering.&quot; In <i>CAMSAP 2019</i> (pp. 609-613). IEEE.'
 ---
 
-The contents above will be part of a list of publications, if the user clicks the link for the publication than the contents of section will be rendered as a full page, allowing you to provide more information about the paper for the reader. When publications are displayed as a single page, the contents of the above "citation" field will automatically be included below this section in a smaller font.
