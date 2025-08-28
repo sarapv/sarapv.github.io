@@ -9,7 +9,7 @@ date: 2019-12-15
 #venue: '2019 IEEE 8th International Workshop on Computational Advances in Multi-Sensor Adaptive Processing (CAMSAP)'
 paperurl: 'http://sarapv.github.io/files/paper/perez2019second.pdf'
 doiurl: 'https://doi.org/10.1109/CAMSAP45676.2019.9022449'
-bibtexurl: 'http://sarapv.github.io/files/bibtex/perez2019second.bib'
+bibtexurl: 'http://sarapv.github.io/files/bibtex/perez2019second.txt'
 #arxivurl: 'https://arxiv.org/abs/1234.5678'
 #citation: 'Pérez-Vieites, S., Vilà-Vals, J., Bugallo, M. F., Míguez, J., & Closas, P. (2019). &quot;Second Order Subspace Statistics for Adaptive State-Space Partitioning in Multiple Particle Filtering.&quot; In <i>CAMSAP 2019</i> (pp. 609-613). IEEE.'
 ---
