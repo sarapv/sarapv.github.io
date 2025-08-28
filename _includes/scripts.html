@@ -1,3 +1,80 @@
 <script type="module" src="{{ base_path }}/assets/js/main.min.js"></script>
 
+<script>
+// Function to copy BibTeX from URL to clipboard
+async function copyBibtex(bibtexUrl, button) {
+  try {
+    // Fetch the BibTeX content
+    const response = await fetch(bibtexUrl);
+    const bibtexText = await response.text();
+    
+    // Copy to clipboard
+    await navigator.clipboard.writeText(bibtexText);
+    
+    // Visual feedback
+    const originalText = button.textContent;
+    button.textContent = 'Copied!';
+    button.style.backgroundColor = '#28a745';
+    
+    // Reset after 2 seconds
+    setTimeout(() => {
+      button.textContent = originalText;
+      button.style.backgroundColor = '';
+    }, 2000);
+    
+  } catch (err) {
+    console.error('Failed to copy BibTeX: ', err);
+    // Fallback: open the file in a new tab
+    window.open(bibtexUrl, '_blank');
+  }
+}
+
+// Function to copy inline BibTeX to clipboard
+async function copyBibtexInline(button) {
+  try {
+    const bibtexText = button.getAttribute('data-bibtex');
+    
+    // Copy to clipboard
+    await navigator.clipboard.writeText(bibtexText);
+    
+    // Visual feedback
+    const originalText = button.textContent;
+    button.textContent = 'Copied!';
+    button.style.backgroundColor = '#28a745';
+    
+    // Reset after 2 seconds
+    setTimeout(() => {
+      button.textContent = originalText;
+      button.style.backgroundColor = '';
+    }, 2000);
+    
+  } catch (err) {
+    console.error('Failed to copy BibTeX: ', err);
+    alert('Failed to copy BibTeX to clipboard');
+  }
+}
+</script>
+
+<style>
+.bibtex-copy-btn {
+  background: none;
+  border: none;
+  color: #337ab7;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: inherit;
+  font-family: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+.bibtex-copy-btn:hover {
+  color: #23527c;
+}
+
+.bibtex-copy-btn:focus {
+  outline: 1px dotted;
+}
+</style>
+
 {% include analytics.html %}

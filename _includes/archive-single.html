@@ -54,7 +54,7 @@
     
     {% if post.abstract %}
     <details class="abstract-toggle">
-      <summary><strong>Show Abstract</strong></summary>
+      <summary><strong>Abstract</strong></summary>
       <div class="abstract-content">
         {{ post.abstract | markdownify }}
       </div>
@@ -62,31 +62,47 @@
     {% endif %}
     
     {% if post.citation and post.paperurl and post.slidesurl and post.bibtexurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">Download Paper</a> | <a href="{{ post.slidesurl }}">Download Slides</a> | <a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
+      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">Download Paper</a> | <a href="{{ post.slidesurl }}">Download Slides</a> | <button onclick="copyBibtex('{{ post.bibtexurl }}', this)" class="bibtex-copy-btn">Copy BibTeX</button>{% if post.arxivurl %} | <a href="{{ post.arxivurl }}">arXiv</a>{% endif %}{% if post.doiurl %} | <a href="{{ post.doiurl }}">DOI</a>{% endif %}</p>
+    {% elsif post.citation and post.paperurl and post.slidesurl and post.bibtex %}
+      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">Download Paper</a> | <a href="{{ post.slidesurl }}">Download Slides</a> | <button onclick="copyBibtexInline(this)" data-bibtex="{{ post.bibtex | escape }}" class="bibtex-copy-btn">Copy BibTeX</button>{% if post.arxivurl %} | <a href="{{ post.arxivurl }}">arXiv</a>{% endif %}{% if post.doiurl %} | <a href="{{ post.doiurl }}">DOI</a>{% endif %}</p>
     {% elsif post.citation and post.paperurl and post.slidesurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">Download Paper</a> | <a href="{{ post.slidesurl }}">Download Slides</a></p>
+      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">Download Paper</a> | <a href="{{ post.slidesurl }}">Download Slides</a>{% if post.arxivurl %} | <a href="{{ post.arxivurl }}">arXiv</a>{% endif %}{% if post.doiurl %} | <a href="{{ post.doiurl }}">DOI</a>{% endif %}</p>
     {% elsif post.citation and post.paperurl and post.bibtexurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">Download Paper</a> | <a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
+      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">Download Paper</a> | <button onclick="copyBibtex('{{ post.bibtexurl }}', this)" class="bibtex-copy-btn">Copy BibTeX</button>{% if post.arxivurl %} | <a href="{{ post.arxivurl }}">arXiv</a>{% endif %}{% if post.doiurl %} | <a href="{{ post.doiurl }}">DOI</a>{% endif %}</p>
+    {% elsif post.citation and post.paperurl and post.bibtex %}
+      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">Download Paper</a> | <button onclick="copyBibtexInline(this)" data-bibtex="{{ post.bibtex | escape }}" class="bibtex-copy-btn">Copy BibTeX</button>{% if post.arxivurl %} | <a href="{{ post.arxivurl }}">arXiv</a>{% endif %}{% if post.doiurl %} | <a href="{{ post.doiurl }}">DOI</a>{% endif %}</p>
     {% elsif post.citation and post.paperurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">Download Paper</a></p>
+      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">Download Paper</a>{% if post.arxivurl %} | <a href="{{ post.arxivurl }}">arXiv</a>{% endif %}{% if post.doiurl %} | <a href="{{ post.doiurl }}">DOI</a>{% endif %}</p>
     {% elsif post.citation and post.slidesurl and post.bibtexurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.slidesurl }}">Download Slides</a> | <a href="{{ post.bibtexurl}}">Download Bibtex</a></p>
+      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.slidesurl }}">Download Slides</a> | <button onclick="copyBibtex('{{ post.bibtexurl }}', this)" class="bibtex-copy-btn">Copy BibTeX</button>{% if post.arxivurl %} | <a href="{{ post.arxivurl }}">arXiv</a>{% endif %}{% if post.doiurl %} | <a href="{{ post.doiurl }}">DOI</a>{% endif %}</p>
+    {% elsif post.citation and post.slidesurl and post.bibtex %}
+      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.slidesurl }}">Download Slides</a> | <button onclick="copyBibtexInline(this)" data-bibtex="{{ post.bibtex | escape }}" class="bibtex-copy-btn">Copy BibTeX</button>{% if post.arxivurl %} | <a href="{{ post.arxivurl }}">arXiv</a>{% endif %}{% if post.doiurl %} | <a href="{{ post.doiurl }}">DOI</a>{% endif %}</p>
     {% elsif post.citation and post.slidesurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.slidesurl }}">Download Slides</a></p>
+      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.slidesurl }}">Download Slides</a>{% if post.arxivurl %} | <a href="{{ post.arxivurl }}">arXiv</a>{% endif %}{% if post.doiurl %} | <a href="{{ post.doiurl }}">DOI</a>{% endif %}</p>
     {% elsif post.citation and post.bibtexurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
+      <p>Recommended citation: {{ post.citation }}<br /><button onclick="copyBibtex('{{ post.bibtexurl }}', this)" class="bibtex-copy-btn">Copy BibTeX</button>{% if post.arxivurl %} | <a href="{{ post.arxivurl }}">arXiv</a>{% endif %}{% if post.doiurl %} | <a href="{{ post.doiurl }}">DOI</a>{% endif %}</p>
+    {% elsif post.citation and post.bibtex %}
+      <p>Recommended citation: {{ post.citation }}<br /><button onclick="copyBibtexInline(this)" data-bibtex="{{ post.bibtex | escape }}" class="bibtex-copy-btn">Copy BibTeX</button>{% if post.arxivurl %} | <a href="{{ post.arxivurl }}">arXiv</a>{% endif %}{% if post.doiurl %} | <a href="{{ post.doiurl }}">DOI</a>{% endif %}</p>
     {% elsif post.citation %}
-      <p>Recommended citation: {{ post.citation }}</p>
+      <p>Recommended citation: {{ post.citation }}{% if post.arxivurl %}<br /><a href="{{ post.arxivurl }}">arXiv</a>{% endif %}{% if post.doiurl %}{% if post.arxivurl %} | {% else %}<br />{% endif %}<a href="{{ post.doiurl }}">DOI</a>{% endif %}</p>
     {% elsif post.paperurl and post.bibtexurl %}
-      <p><a href=" {{ post.paperurl }} ">Download Paper</a> | <a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
+      <p><a href=" {{ post.paperurl }} ">Download Paper</a> | <button onclick="copyBibtex('{{ post.bibtexurl }}', this)" class="bibtex-copy-btn">Copy BibTeX</button>{% if post.arxivurl %} | <a href="{{ post.arxivurl }}">arXiv</a>{% endif %}{% if post.doiurl %} | <a href="{{ post.doiurl }}">DOI</a>{% endif %}</p>
+    {% elsif post.paperurl and post.bibtex %}
+      <p><a href=" {{ post.paperurl }} ">Download Paper</a> | <button onclick="copyBibtexInline(this)" data-bibtex="{{ post.bibtex | escape }}" class="bibtex-copy-btn">Copy BibTeX</button>{% if post.arxivurl %} | <a href="{{ post.arxivurl }}">arXiv</a>{% endif %}{% if post.doiurl %} | <a href="{{ post.doiurl }}">DOI</a>{% endif %}</p>
     {% elsif post.paperurl %}
-      <p><a href=" {{ post.paperurl }} ">Download Paper</a></p>
+      <p><a href=" {{ post.paperurl }} ">Download Paper</a>{% if post.arxivurl %} | <a href="{{ post.arxivurl }}">arXiv</a>{% endif %}{% if post.doiurl %} | <a href="{{ post.doiurl }}">DOI</a>{% endif %}</p>
     {% elsif post.slidesurl and post.bibtexurl %}
-      <p><a href="{{ post.slidesurl }}">Download Slides</a> | <a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
+      <p><a href="{{ post.slidesurl }}">Download Slides</a> | <button onclick="copyBibtex('{{ post.bibtexurl }}', this)" class="bibtex-copy-btn">Copy BibTeX</button>{% if post.arxivurl %} | <a href="{{ post.arxivurl }}">arXiv</a>{% endif %}{% if post.doiurl %} | <a href="{{ post.doiurl }}">DOI</a>{% endif %}</p>
+    {% elsif post.slidesurl and post.bibtex %}
+      <p><a href="{{ post.slidesurl }}">Download Slides</a> | <button onclick="copyBibtexInline(this)" data-bibtex="{{ post.bibtex | escape }}" class="bibtex-copy-btn">Copy BibTeX</button>{% if post.arxivurl %} | <a href="{{ post.arxivurl }}">arXiv</a>{% endif %}{% if post.doiurl %} | <a href="{{ post.doiurl }}">DOI</a>{% endif %}</p>
     {% elsif post.slidesurl %}
-      <p><a href="{{ post.slidesurl }}">Download Slides</a></p>
+      <p><a href="{{ post.slidesurl }}">Download Slides</a>{% if post.arxivurl %} | <a href="{{ post.arxivurl }}">arXiv</a>{% endif %}{% if post.doiurl %} | <a href="{{ post.doiurl }}">DOI</a>{% endif %}</p>
     {% elsif post.bibtexurl %}
-      <p><a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
+      <p><button onclick="copyBibtex('{{ post.bibtexurl }}', this)" class="bibtex-copy-btn">Copy BibTeX</button>{% if post.arxivurl %} | <a href="{{ post.arxivurl }}">arXiv</a>{% endif %}{% if post.doiurl %} | <a href="{{ post.doiurl }}">DOI</a>{% endif %}</p>
+    {% elsif post.bibtex %}
+      <p><button onclick="copyBibtexInline(this)" data-bibtex="{{ post.bibtex | escape }}" class="bibtex-copy-btn">Copy BibTeX</button>{% if post.arxivurl %} | <a href="{{ post.arxivurl }}">arXiv</a>{% endif %}{% if post.doiurl %} | <a href="{{ post.doiurl }}">DOI</a>{% endif %}</p>
+    {% elsif post.arxivurl or post.doiurl %}
+      <p>{% if post.arxivurl %}<a href="{{ post.arxivurl }}">arXiv</a>{% endif %}{% if post.arxivurl and post.doiurl %} | {% endif %}{% if post.doiurl %}<a href="{{ post.doiurl }}">DOI</a>{% endif %}</p>
     {% endif %}
 
   </article>
