@@ -1,0 +1,8 @@
+@inproceedings{perez2021kalman,
+  title={Kalman-based nested hybrid filters for recursive inference in state-space models},
+  author={P{\'e}rez-Vieites, Sara and M{\'\i}guez, Joaqu{\'\i}n},
+  booktitle={2020 28th European Signal Processing Conference (EUSIPCO)},
+  pages={2468--2472},
+  year={2021},
+  organization={IEEE}
+}
