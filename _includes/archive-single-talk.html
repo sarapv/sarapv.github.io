@@ -31,7 +31,7 @@
       <div style="display: flex; align-items: flex-start;">
         <span style="margin-right: 0.5em; margin-top: 0.1em;">•</span>
         <div style="flex: 1;">
-          {% if post.type %}<strong>{{ post.type }}</strong>{% endif %}
+          {% if post.type %}<strong>{{ post.title }}</strong>{% endif %}
           {% if post.date %} ({{ post.date | date: '%B %Y' }}){% endif %}
           {% if post.venue or post.location %}
             {% if post.venue %}, <em>{{ post.venue }}</em>{% endif %}
