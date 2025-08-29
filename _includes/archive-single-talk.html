@@ -48,6 +48,7 @@
           {% endif %}
           {% assign has_paper = false %}
           {% assign has_slides = false %}
+          {% assign has_poster = false %}
           {% assign has_video = false %}
           
           {% if post.paperurl and post.paperurl != "" %}
@@ -60,8 +61,13 @@
             {% assign has_slides = true %}
           {% endif %}
 
+          {% if post.posterurl and post.posterurl != "" %}
+            {% if has_paper or has_slides %} | {% endif %}<a href="{{ post.posterurl }}">Poster</a>
+            {% assign has_poster = true %}
+          {% endif %}
+
           {% if post.videourl and post.videourl != "" %}
-            {% if has_paper or has_slides %} | {% endif %}<a href="{{ post.videourl }}">Video</a>
+            {% if has_paper or has_slides or has_poster %} | {% endif %}<a href="{{ post.videourl }}">Video</a>
             {% assign has_video = true %}
           {% endif %}
 
