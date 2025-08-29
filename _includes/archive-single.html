@@ -43,37 +43,42 @@
     {% if post.collection == 'teaching' %}
       <p> {{ post.type }}, <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
     {% elsif post.collection == 'publications' %}
-      <!-- Display publication as bullet point with citation -->
-      <div style="margin-bottom: 1em;">
-        {% if post.citation_with_links %}
-          - {{ post.citation_with_links }}
-        {% elsif post.citation %}
-          - {{ post.citation }}
-        {% endif %}
-        
-        <!-- Add links on new line if any exist -->
-        {% if post.paperurl or post.slidesurl or post.bibtexurl or post.bibtex or post.arxivurl or post.doiurl %}
-          <br>
-          {% if post.paperurl %}<a href="{{ post.paperurl }}">Download Paper</a>{% endif %}
-          {% if post.slidesurl %}{% if post.paperurl %} | {% endif %}<a href="{{ post.slidesurl }}">Download Slides</a>{% endif %}
-          {% if post.bibtexurl %}{% if post.paperurl or post.slidesurl %} | {% endif %}<a href="{{ post.bibtexurl }}" target="_blank">BibTeX</a>{% endif %}
-          {% if post.bibtex %}{% if post.paperurl or post.slidesurl or post.bibtexurl %} | {% endif %}<button onclick="copyBibtexInline(this)" data-bibtex="{{ post.bibtex | escape }}" class="bibtex-copy-btn">Copy BibTeX</button>{% endif %}
-          {% if post.arxivurl %}{% if post.paperurl or post.slidesurl or post.bibtexurl or post.bibtex %} | {% endif %}<a href="{{ post.arxivurl }}">arXiv</a>{% endif %}
-          {% if post.doiurl %}{% if post.paperurl or post.slidesurl or post.bibtexurl or post.bibtex or post.arxivurl %} | {% endif %}<a href="{{ post.doiurl }}">DOI</a>{% endif %}
-        {% endif %}
-        
-        <!-- Add abstract on new line if it exists -->
-        {% if post.abstract %}
-          <br>
-          <span style="margin-left: 1em;">
-            <details class="abstract-toggle" style="display: inline-block;">
-              <summary style="cursor: pointer;"><strong>Abstract</strong></summary>
-              <div class="abstract-content" style="margin-top: 0.5em; margin-left: 1em;">
-                {{ post.abstract | markdownify }}
-              </div>
-            </details>
-          </span>
-        {% endif %}
+      <!-- Display publication as proper list item with citation -->
+      <div style="margin-bottom: 1.5em; margin-left: 0; position: relative;">
+        <div style="display: flex; align-items: flex-start;">
+          <span style="margin-right: 0.5em; margin-top: 0.1em;">•</span>
+          <div style="flex: 1;">
+            {% if post.citation_with_links %}
+              {{ post.citation_with_links }}
+            {% elsif post.citation %}
+              {{ post.citation }}
+            {% endif %}
+            
+            <!-- Add links on new line if any exist -->
+            {% if post.paperurl or post.slidesurl or post.bibtexurl or post.bibtex or post.arxivurl or post.doiurl %}
+              <br>
+              {% if post.paperurl %}<a href="{{ post.paperurl }}">Download Paper</a>{% endif %}
+              {% if post.slidesurl %}{% if post.paperurl %} | {% endif %}<a href="{{ post.slidesurl }}">Download Slides</a>{% endif %}
+              {% if post.bibtexurl %}{% if post.paperurl or post.slidesurl %} | {% endif %}<a href="{{ post.bibtexurl }}" target="_blank">BibTeX</a>{% endif %}
+              {% if post.bibtex %}{% if post.paperurl or post.slidesurl or post.bibtexurl %} | {% endif %}<button onclick="copyBibtexInline(this)" data-bibtex="{{ post.bibtex | escape }}" class="bibtex-copy-btn">Copy BibTeX</button>{% endif %}
+              {% if post.arxivurl %}{% if post.paperurl or post.slidesurl or post.bibtexurl or post.bibtex %} | {% endif %}<a href="{{ post.arxivurl }}">arXiv</a>{% endif %}
+              {% if post.doiurl %}{% if post.paperurl or post.slidesurl or post.bibtexurl or post.bibtex or post.arxivurl %} | {% endif %}<a href="{{ post.doiurl }}">DOI</a>{% endif %}
+            {% endif %}
+            
+            <!-- Add abstract on new line if it exists -->
+            {% if post.abstract %}
+              <br>
+              <span style="margin-left: 1em;">
+                <details class="abstract-toggle" style="display: inline-block;">
+                  <summary style="cursor: pointer;"><strong>Abstract</strong></summary>
+                  <div class="abstract-content" style="margin-top: 0.5em; margin-left: 1em;">
+                    {{ post.abstract | markdownify }}
+                  </div>
+                </details>
+              </span>
+            {% endif %}
+          </div>
+        </div>
       </div>
     {% elsif post.date %}
      <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Published:" }}</strong> <time datetime="{{ post.date | default: "1900-01-01" | date_to_xmlschema }}">{{ post.date | default: "1900-01-01" | date: "%B %d, %Y" }}</time></p>
