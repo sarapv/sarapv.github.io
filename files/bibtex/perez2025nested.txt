@@ -1,0 +1,6 @@
+@article{perez2025nested,
+  title={Nested smoothing algorithms for inference and tracking of heterogeneous multi-scale state-space systems},
+  author={P{\'e}rez-Vieites, Sara and Molina-Bulla, Harold and M{\'\i}guez, Joaqu{\'\i}n},
+  journal={Foundations of Data Science},
+  year={2025}
+}
