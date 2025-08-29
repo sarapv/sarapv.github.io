@@ -1,0 +1,6 @@
+@article{iqbal2024recursive,
+  title={Recursive nested filtering for efficient amortized {B}ayesian experimental design},
+  author={Iqbal, Sahel and Abdulsamad, Hany and P{\'e}rez-Vieites, Sara and S{\"a}rkk{\"a}, Simo and Corenflos, Adrien},
+  journal={arXiv preprint arXiv:2409.05354},
+  year={2024}
+}
