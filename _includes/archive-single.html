@@ -67,6 +67,7 @@
               {% assign has_arxiv = false %}
               {% assign has_bibtex = false %}
               {% assign has_doi = false %}
+              {% assign has_slides = false %}
               
               {% if post.paperurl and post.paperurl != "" %}
                 <a href="{{ post.paperurl }}">Download</a>
@@ -89,6 +90,10 @@
 
               {% if post.slidesurl and post.slidesurl != "" %}
                 {% if has_paper or has_arxiv or has_bibtex or has_doi %} | {% endif %}<a href="{{ post.slidesurl }}">Slides</a>
+              {% endif %}
+
+              {% if post.code and post.code != "" %}
+                {% if has_paper or has_arxiv or has_bibtex or has_doi or has_slides %} | {% endif %}<a href="{{ post.code }}">Code</a>
               {% endif %}
             {% endif %}
             

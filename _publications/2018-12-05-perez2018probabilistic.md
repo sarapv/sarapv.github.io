@@ -10,4 +10,5 @@ abstract: 'Many problems in physics demand the ability to calibrate the paramete
 doiurl: 'https://doi.org/10.1103/PhysRevE.98.063305'
 bibtexurl: 'http://sarapv.github.io/files/bibtex/perez2018probabilistic.txt'
 arxivurl: 'https://arxiv.org/abs/1708.03730'
+code: 'https://github.com/sarapv/Perez-Vieites2018_NestedHybridFilter'
 ---
