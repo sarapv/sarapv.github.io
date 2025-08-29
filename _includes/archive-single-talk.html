@@ -40,7 +40,7 @@
           {% if (post.venue and post.venue != "") or (post.location and post.location != "") %}
             {% if post.venue and post.venue != "" %} <em>{{ post.venue }}</em>{% endif %}
             {% if post.location and post.location != "" %}({{ post.location }}){% endif %}
-          {% endif %}.
+          {% endif %}
           
           <!-- Add links on new line if any exist -->
           {% if post.paperurl or post.slidesurl or post.videourl %}
