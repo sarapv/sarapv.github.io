@@ -45,9 +45,9 @@
     {% elsif post.collection == 'publications' %}
       <!-- Display publication as bullet point with citation -->
       {% if post.citation_with_links %}
-        <p>• {{ post.citation_with_links }}
+        <p>- {{ post.citation_with_links }}
       {% elsif post.citation %}
-        <p>• {{ post.citation }}
+        <p>- {{ post.citation }}
       {% endif %}
       
       <!-- Add links on new line if any exist -->
@@ -63,12 +63,12 @@
       
       <!-- Add abstract on new line if it exists -->
       {% if post.abstract %}
-        <br>&nbsp;&nbsp;<details class="abstract-toggle">
+        <span style="margin-left: 5px;"><details class="abstract-toggle">
           <summary><strong>Abstract</strong></summary>
           <div class="abstract-content">
-            {{ post.abstract | markdownify }}
+        {{ post.abstract | markdownify }}
           </div>
-        </details>
+        </details></span>
       {% endif %}
       </p>
     {% elsif post.date %}
