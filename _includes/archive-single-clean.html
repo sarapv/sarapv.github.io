@@ -1,0 +1,85 @@
+{% include base_path %}
+
+{% if post.header.teaser %}
+  {% capture teaser %}{{ post.header.teaser }}{% endcapture %}
+{% else %}
+  {% assign teaser = site.teaser %}
+{% endif %}
+
+{% if post.id %}
+  {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
+{% else %}
+  {% assign title = post.title %}
+{% endif %}
+
+<div class="{{ include.type | default: "list" }}__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    {% if include.type == "grid" and teaser %}
+      <div class="archive__item-teaser">
+        <img src=
+          {% if teaser contains "://" %}
+            "{{ teaser }}"
+          {% else %}
+            "{{ teaser | prepend: "/images/" | prepend: base_path }}"
+          {% endif %}
+          alt="">
+      </div>
+    {% endif %}
+
+    <h2 class="archive__item-title" itemprop="headline">
+      {% if post.collection == 'publications' %}
+        <!-- No title link for publications - just show as citation list -->
+      {% elsif post.link %}
+        <a href="{{ post.link }}">{{ title }}</a> <a href="{{ base_path }}{{ post.url }}" rel="permalink"><i class="fa fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
+      {% else %}
+        <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
+      {% endif %}
+    </h2>
+    
+    {% if post.read_time %}
+      <p class="page__meta"><i class="fa fa-clock" aria-hidden="true"></i> {% include read-time.html %}</p>
+    {% endif %}
+
+    {% if post.collection == 'teaching' %}
+      <p> {{ post.type }}, <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
+    {% elsif post.collection == 'publications' %}
+      <!-- Display publication as bullet point with citation -->
+      {% if post.citation_with_links %}
+        <p>• {{ post.citation_with_links }}
+      {% elsif post.citation %}
+        <p>• {{ post.citation }}
+      {% endif %}
+      
+      <!-- Add links on new line if any exist -->
+      {% if post.paperurl or post.slidesurl or post.bibtexurl or post.bibtex or post.arxivurl or post.doiurl %}
+        <br>
+        {% if post.paperurl %}<a href="{{ post.paperurl }}">Download Paper</a>{% endif %}
+        {% if post.slidesurl %}{% if post.paperurl %} | {% endif %}<a href="{{ post.slidesurl }}">Download Slides</a>{% endif %}
+        {% if post.bibtexurl %}{% if post.paperurl or post.slidesurl %} | {% endif %}<a href="{{ post.bibtexurl }}" target="_blank">BibTeX</a>{% endif %}
+        {% if post.bibtex %}{% if post.paperurl or post.slidesurl or post.bibtexurl %} | {% endif %}<button onclick="copyBibtexInline(this)" data-bibtex="{{ post.bibtex | escape }}" class="bibtex-copy-btn">Copy BibTeX</button>{% endif %}
+        {% if post.arxivurl %}{% if post.paperurl or post.slidesurl or post.bibtexurl or post.bibtex %} | {% endif %}<a href="{{ post.arxivurl }}">arXiv</a>{% endif %}
+        {% if post.doiurl %}{% if post.paperurl or post.slidesurl or post.bibtexurl or post.bibtex or post.arxivurl %} | {% endif %}<a href="{{ post.doiurl }}">DOI</a>{% endif %}
+      {% endif %}
+      
+      <!-- Add abstract on new line if it exists -->
+      {% if post.abstract %}
+        <br>&nbsp;&nbsp;<details class="abstract-toggle">
+          <summary><strong>Abstract</strong></summary>
+          <div class="abstract-content">
+            {{ post.abstract | markdownify }}
+          </div>
+        </details>
+      {% endif %}
+      </p>
+    {% elsif post.date %}
+     <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Published:" }}</strong> <time datetime="{{ post.date | default: "1900-01-01" | date_to_xmlschema }}">{{ post.date | default: "1900-01-01" | date: "%B %d, %Y" }}</time></p>
+    {% endif %}
+
+    {% if post.excerpt and site.read_more != 'enabled' %}
+    <p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify }}</p>
+    {% elsif post.excerpt and site.read_more == 'enabled' %}
+    <p class="archive__item-excerpt" itemprop="description"> {{ post.excerpt | markdownify | remove: '<p>' | remove: '</p>' }}<strong><a href="{{ base_path }}{{ post.url }}" rel="permalink"> Read more</a></strong></p></p>
+    {% endif %}
+
+  </article>
+</div>
