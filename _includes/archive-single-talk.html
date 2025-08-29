@@ -25,18 +25,46 @@
           alt="">
       </div>
     {% endif %}
-    <h2 class="archive__item-title" itemprop="headline">
-      {% if post.link %}
-        <a href="{{ post.link }}">{{ title }}</a> <a href="{{ base_path }}{{ post.url }}" rel="permalink"><i class="fa fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
-      {% else %}
-        <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
-      {% endif %}
-    </h2>
-    {% if post.read_time %}
-      <p class="page__meta"><i class="fa fa-clock" aria-hidden="true"></i> {% include read-time.html %}</p>
-    {% endif %}
-    {% if post.date %}<p class="page__meta"><i class="fa fa-clock" aria-hidden="true"></i> {{ post.date | date: '%B %d, %Y' }}</p>{% endif %}
-    {% if post.venue %}<p class="archive__item-excerpt" itemprop="description">{{post.type}}, {{ post.venue }},  {{post.location}} {% endif %}
-    {% if post.excerpt %}<p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify }}</p>{% endif %}
+
+    <!-- Display talk as proper list item with title and details -->
+    <div style="margin-bottom: 1.5em; margin-left: 0; position: relative;">
+      <div style="display: flex; align-items: flex-start;">
+        <span style="margin-right: 0.5em; margin-top: 0.1em;">•</span>
+        <div style="flex: 1;">
+          <strong>{{ title }}</strong>
+          {% if post.date %} ({{ post.date | date: '%B %Y' }}){% endif %}
+          {% if post.venue or post.location or post.type %}
+            <br>
+            {% if post.type %}{{ post.type }}{% endif %}{% if post.venue %}{% if post.type %}, {% endif %}<em>{{ post.venue }}</em>{% endif %}{% if post.location %}{% if post.venue or post.type %}, {% endif %}{{ post.location }}{% endif %}
+          {% endif %}
+          
+          <!-- Add links on new line if any exist -->
+          {% if post.url or post.paperurl or post.slidesurl or post.videourl %}
+            <br>
+            {% if post.url %}<a href="{{ base_path }}{{ post.url }}">Details</a>{% endif %}
+            {% if post.paperurl %}{% if post.url %} | {% endif %}<a href="{{ post.paperurl }}">Paper</a>{% endif %}
+            {% if post.slidesurl %}{% if post.url or post.paperurl %} | {% endif %}<a href="{{ post.slidesurl }}">Slides</a>{% endif %}
+            {% if post.videourl %}{% if post.url or post.paperurl or post.slidesurl %} | {% endif %}<a href="{{ post.videourl }}">Video</a>{% endif %}
+          {% endif %}
+          
+          <!-- Add abstract/description if it exists -->
+          {% if post.excerpt or post.abstract %}
+            <br>
+            <span style="margin-left: 1em;">
+              <details class="abstract-toggle" style="display: inline-block;">
+                <summary style="cursor: pointer;"><strong>Abstract</strong></summary>
+                <div class="abstract-content arithmatex" style="margin-top: 0.5em; margin-left: 1em;">
+                  {% if post.abstract %}
+                    {{ post.abstract | markdownify }}
+                  {% else %}
+                    {{ post.excerpt | markdownify }}
+                  {% endif %}
+                </div>
+              </details>
+            </span>
+          {% endif %}
+        </div>
+      </div>
+    </div>
   </article>
 </div>
