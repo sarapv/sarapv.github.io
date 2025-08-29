@@ -44,9 +44,9 @@
       <p> {{ post.type | default: "Course" }}, <i>{{ post.venue | default: "Unknown Venue" }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
     {% elsif post.collection == 'publications' %}
       <!-- Display publication as proper list item with citation -->
-      <div style="margin-bottom: 0.5em; margin-left: 0; position: relative;">
+      <div style="margin-bottom: 0.3em; margin-left: 0; position: relative;">
         <div style="display: flex; align-items: flex-start;">
-          <span style="margin-bottom: 0.5em; margin-right: 0.5em; margin-top: 0.1em;">•</span>
+          <span style="margin-right: 0.5em; margin-top: 0.1em;">•</span>
           <div style="flex: 1;">
             {% if post.citation_with_links and post.citation_with_links != "" %}
               {{ post.citation_with_links }}
