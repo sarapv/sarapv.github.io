@@ -50,7 +50,7 @@
           {% if post.videourl and post.videourl != "" %}{% assign has_talk_links = true %}{% endif %}
           
           {% if has_talk_links %}
-            <br>
+            .
             <!-- {% if post.url and post.url != "" %}<a href="{{ base_path }}{{ post.url }}">Details</a>{% endif %} -->
             {% if post.paperurl and post.paperurl != "" %}<a href="{{ post.paperurl }}">Paper</a>{% endif %}
             {% if post.slidesurl and post.slidesurl != "" %}{% if post.paperurl and post.paperurl != "" %} | {% endif %}<a href="{{ post.slidesurl }}">Slides</a>{% endif %}
@@ -58,7 +58,7 @@
           {% endif %}
           
           <!-- Add abstract/description if it exists -->
-          {% if post.abstract and post.abstract != "" %}
+          <!-- {% if post.abstract and post.abstract != "" %}
             <br>
             <span style="margin-left: 1em;">
               <details class="abstract-toggle" style="display: inline-block;">
@@ -68,7 +68,7 @@
                 </div>
               </details>
             </span>
-          {% endif %}
+          {% endif %} -->
         </div>
       </div>
     </div>
