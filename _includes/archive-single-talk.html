@@ -48,17 +48,13 @@
           {% endif %}
           
           <!-- Add abstract/description if it exists -->
-          {% if post.excerpt or post.abstract %}
+          {% if post.abstract %}
             <br>
             <span style="margin-left: 1em;">
               <details class="abstract-toggle" style="display: inline-block;">
                 <summary style="cursor: pointer;"><strong>Abstract</strong></summary>
                 <div class="abstract-content arithmatex" style="margin-top: 0.5em; margin-left: 1em;">
-                  {% if post.abstract %}
-                    {{ post.abstract | markdownify }}
-                  {% else %}
-                    {{ post.excerpt | markdownify }}
-                  {% endif %}
+                  {{ post.abstract }}
                 </div>
               </details>
             </span>
