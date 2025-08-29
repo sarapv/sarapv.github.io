@@ -57,22 +57,12 @@
             {% endif %}
             
             <!-- Add links on new line if any exist -->
-            {% assign links = "" | split: "" %}
-            {% if post.paperurl and post.paperurl != "" %}
-              {% assign links = links | push: '<a href="' | append: post.paperurl | append: '">Download</a>' %}
-            {% endif %}
-            {% if post.arxivurl and post.arxivurl != "" %}
-              {% assign links = links | push: '<a href="' | append: post.arxivurl | append: '">arXiv</a>' %}
-            {% endif %}
-            {% if post.bibtexurl and post.bibtexurl != "" %}
-              {% assign links = links | push: '<a href="' | append: post.bibtexurl | append: '">BibTeX</a>' %}
-            {% endif %}
-            {% if post.doiurl and post.doiurl != "" %}
-              {% assign links = links | push: '<a href="' | append: post.doiurl | append: '">DOI</a>' %}
-            {% endif %}
-            
-            {% if links.size > 0 %}
-              <br>{{ links | join: " | " }}
+            {% if post.paperurl or post.arxivurl or post.bibtexurl or post.doiurl %}
+              <br>
+              {% if post.paperurl and post.paperurl != "" %}<a href="{{ post.paperurl }}">Download</a>{% endif %}
+              {% if post.arxivurl and post.arxivurl != "" %}{% if post.paperurl and post.paperurl != "" %} | {% endif %}<a href="{{ post.arxivurl }}">arXiv</a>{% endif %}
+              {% if post.bibtexurl and post.bibtexurl != "" %}{% if (post.paperurl and post.paperurl != "") or (post.arxivurl and post.arxivurl != "") %} | {% endif %}<a href="{{ post.bibtexurl }}">BibTeX</a>{% endif %}
+              {% if post.doiurl and post.doiurl != "" %}{% if (post.paperurl and post.paperurl != "") or (post.arxivurl and post.arxivurl != "") or (post.bibtexurl and post.bibtexurl != "") %} | {% endif %}<a href="{{ post.doiurl }}">DOI</a>{% endif %}
             {% endif %}
             
             <!-- Add abstract on new line if it exists -->
