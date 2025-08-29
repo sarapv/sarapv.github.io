@@ -9,7 +9,7 @@
 {% if post.id %}
   {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
 {% else %}
-  {% assign title = post.title %}
+  {% assign title = post.title | default: "Untitled Talk" %}
 {% endif %}
 
 <div class="{{ include.type | default: "list" }}__item">
@@ -36,19 +36,25 @@
           {% else %}
             <strong> - </strong>
           {% endif %}
-          {% if post.date %} ({{ post.date | date: '%B %Y' }}){% endif %}{% if post.date and (post.venue or post.location) %},{% endif %}
-          {% if post.venue or post.location %}
-            {% if post.venue %} <em>{{ post.venue }}</em>{% endif %}
-            {% if post.location %}({{ post.location }}){% endif %}
+          {% if post.date and post.date != "" %} ({{ post.date | date: '%B %Y' }}){% endif %}{% if post.date and post.date != "" and ((post.venue and post.venue != "") or (post.location and post.location != "")) %},{% endif %}
+          {% if (post.venue and post.venue != "") or (post.location and post.location != "") %}
+            {% if post.venue and post.venue != "" %} <em>{{ post.venue }}</em>{% endif %}
+            {% if post.location and post.location != "" %}({{ post.location }}){% endif %}
           {% endif %}
           
           <!-- Add links on new line if any exist -->
-          {% if post.url or post.paperurl or post.slidesurl or post.videourl %}
+          {% assign has_talk_links = false %}
+          {% if post.url and post.url != "" %}{% assign has_talk_links = true %}{% endif %}
+          {% if post.paperurl and post.paperurl != "" %}{% assign has_talk_links = true %}{% endif %}
+          {% if post.slidesurl and post.slidesurl != "" %}{% assign has_talk_links = true %}{% endif %}
+          {% if post.videourl and post.videourl != "" %}{% assign has_talk_links = true %}{% endif %}
+          
+          {% if has_talk_links %}
             <br>
-            <!-- {% if post.url %}<a href="{{ base_path }}{{ post.url }}">Details</a>{% endif %} -->
-            {% if post.paperurl %}<a href="{{ post.paperurl }}">Paper</a>{% endif %}
-            {% if post.slidesurl %}{% if post.paperurl %} | {% endif %}<a href="{{ post.slidesurl }}">Slides</a>{% endif %}
-            {% if post.videourl %}{% if post.paperurl or post.slidesurl %} | {% endif %}<a href="{{ post.videourl }}">Video</a>{% endif %}
+            <!-- {% if post.url and post.url != "" %}<a href="{{ base_path }}{{ post.url }}">Details</a>{% endif %} -->
+            {% if post.paperurl and post.paperurl != "" %}<a href="{{ post.paperurl }}">Paper</a>{% endif %}
+            {% if post.slidesurl and post.slidesurl != "" %}{% if post.paperurl and post.paperurl != "" %} | {% endif %}<a href="{{ post.slidesurl }}">Slides</a>{% endif %}
+            {% if post.videourl and post.videourl != "" %}{% if (post.paperurl and post.paperurl != "") or (post.slidesurl and post.slidesurl != "") %} | {% endif %}<a href="{{ post.videourl }}">Video</a>{% endif %}
           {% endif %}
           
           <!-- Add abstract/description if it exists -->
