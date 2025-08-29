@@ -31,11 +31,11 @@
       <div style="display: flex; align-items: flex-start;">
         <span style="margin-right: 0.5em; margin-top: 0.1em;">•</span>
         <div style="flex: 1;">
-          <strong>{{ title }}</strong>
+          {% if post.type %}<strong>{{ post.type }}</strong>{% endif %}
           {% if post.date %} ({{ post.date | date: '%B %Y' }}){% endif %}
           {% if post.venue or post.location or post.type %}
             <br>
-            {% if post.type %}<strong>{{ post.type }}</strong>{% endif %}{% if post.venue %}{% if post.type %}, {% endif %}<em>{{ post.venue }}</em>{% endif %}{% if post.location %}{% if post.venue or post.type %}, {% endif %}{{ post.location }}{% endif %}
+            {% if post.venue %}{% if post.type %}, {% endif %}<em>{{ post.venue }}</em>{% endif %}{% if post.location %}{% if post.venue or post.type %}, {% endif %}{{ post.location }}{% endif %}
           {% endif %}
           
           <!-- Add links on new line if any exist -->
