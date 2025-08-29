@@ -1,0 +1,8 @@
+@inproceedings{cox2024end,
+  title={End-to-end learning of {G}aussian mixture proposals using differentiable particle filters and neural networks},
+  author={Cox, Benjamin and P{\'e}rez-Vieites, Sara and Zilberstein, Nicolas and Sevilla, Martin and Segarra, Santiago and Elvira, V{\'\i}ctor},
+  booktitle={ICASSP 2024-2024 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
+  pages={9701--9705},
+  year={2024},
+  organization={IEEE}
+}
