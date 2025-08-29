@@ -1,0 +1,10 @@
+@article{perez2018probabilistic,
+  title={Probabilistic scheme for joint parameter estimation and state prediction in complex dynamical systems},
+  author={P{\'e}rez-Vieites, Sara and Mari{\~n}o, In{\'e}s P and M{\'\i}guez, Joaqu{\'\i}n},
+  journal={Physical Review E},
+  volume={98},
+  number={6},
+  pages={063305},
+  year={2018},
+  publisher={APS}
+}
