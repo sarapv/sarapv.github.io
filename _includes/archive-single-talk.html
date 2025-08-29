@@ -27,15 +27,19 @@
     {% endif %}
 
     <!-- Display talk as proper list item with title and details -->
-    <div style="margin-bottom: 1.5em; margin-left: 0; position: relative;">
+    <div style="margin-bottom: 0.75em; margin-left: 0; position: relative;">
       <div style="display: flex; align-items: flex-start;">
         <span style="margin-right: 0.5em; margin-top: 0.1em;">•</span>
         <div style="flex: 1;">
-          {% if post.title %}<strong>{{ post.title }}</strong>{% endif %}
-          {% if post.date %} ({{ post.date | date: '%B %Y' }}){% endif %}
+          {% if post.title and post.title != "" %}
+            <strong>{{ post.title }}</strong>
+          {% else %}
+            <strong> - </strong>
+          {% endif %}
+          {% if post.date %} ({{ post.date | date: '%B %Y' }}){% endif %}{% if post.date and (post.venue or post.location) %},{% endif %}
           {% if post.venue or post.location %}
-            {% if post.venue %}, <em>{{ post.venue }}</em>{% endif %}
-            {% if post.location %} ({{ post.location }}){% endif %}
+            {% if post.venue %} <em>{{ post.venue }}</em>{% endif %}
+            {% if post.location %}{% if post.venue %}, {% endif %}{{ post.location }}{% endif %}
           {% endif %}
           
           <!-- Add links on new line if any exist -->
@@ -48,7 +52,7 @@
           {% endif %}
           
           <!-- Add abstract/description if it exists -->
-          {% if post.abstract %}
+          {% if post.abstract and post.abstract != "" %}
             <br>
             <span style="margin-left: 1em;">
               <details class="abstract-toggle" style="display: inline-block;">
