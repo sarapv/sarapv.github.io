@@ -34,7 +34,8 @@
           {% if post.type %}<strong>{{ post.type }}</strong>{% endif %}
           {% if post.date %} ({{ post.date | date: '%B %Y' }}){% endif %}
           {% if post.venue or post.location %}
-            {% if post.venue %}, <em>{{ post.venue }}</em>{% endif %}{% if post.location %}, {{ post.location }}{% endif %}
+            {% if post.venue %}, <em>{{ post.venue }}</em>{% endif %}
+            {% if post.location %} ({{ post.location }}){% endif %}
           {% endif %}
           
           <!-- Add links on new line if any exist -->
