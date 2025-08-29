@@ -43,6 +43,9 @@
           {% endif %}.
           
           <!-- Add links on new line if any exist -->
+          {% if post.paperurl or post.slidesurl or post.videourl %}
+            <br>
+          {% endif %}
           {% assign has_paper = false %}
           {% assign has_slides = false %}
           {% assign has_video = false %}
