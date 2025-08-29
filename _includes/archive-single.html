@@ -57,7 +57,7 @@
             <!-- Add links on new line if any exist -->
             {% if post.paperurl or post.slidesurl or post.bibtexurl or post.bibtex or post.arxivurl or post.doiurl %}
               <br>
-              {% if post.paperurl %}<a href="{{ post.paperurl }}">Download Paper</a>{% endif %}
+              {% if post.paperurl %}<a href="{{ post.paperurl }}">Download</a>{% endif %}
               {% if post.arxivurl %}{% if post.paperurl %} | {% endif %}<a href="{{ post.arxivurl }}">arXiv</a>{% endif %}
               {% if post.bibtexurl %}{% if post.paperurl or post.arxivurl %} | {% endif %}<a href="{{ post.bibtexurl }}" target="_blank">BibTeX</a>{% endif %}
               {% if post.bibtex %}{% if post.paperurl or post.arxivurl or post.bibtexurl %} | {% endif %}<button onclick="copyBibtexInline(this)" data-bibtex="{{ post.bibtex | escape }}" class="bibtex-copy-btn">Copy BibTeX</button>{% endif %}

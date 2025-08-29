@@ -1,0 +1,7 @@
+@phdthesis{perez2022nested,
+  title={Nested filtering methods for {B}ayesian inference in state space models},
+  author={P{\'e}rez-Vieites, Sara},
+  school={Universidad Carlos III de Madrid},
+  month={January},
+  year={2022}
+}
