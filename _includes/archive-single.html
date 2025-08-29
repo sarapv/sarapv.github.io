@@ -70,9 +70,7 @@
               {% if post.paperurl and post.paperurl != "" %}<a href="{{ post.paperurl }}">Download</a>{% endif %}
               {% if post.arxivurl and post.arxivurl != "" %}{% if post.paperurl and post.paperurl != "" %} | {% endif %}<a href="{{ post.arxivurl }}">arXiv</a>{% endif %}
               {% if post.bibtexurl and post.bibtexurl != "" %}{% if (post.paperurl and post.paperurl != "") or (post.arxivurl and post.arxivurl != "") %} | {% endif %}<a href="{{ post.bibtexurl }}" target="_blank">BibTeX</a>{% endif %}
-              {% if post.bibtex and post.bibtex != "" %}{% if (post.paperurl and post.paperurl != "") or (post.arxivurl and post.arxivurl != "") or (post.bibtexurl and post.bibtexurl != "") %} | {% endif %}<button onclick="copyBibtexInline(this)" data-bibtex="{{ post.bibtex | escape }}" class="bibtex-copy-btn">Copy BibTeX</button>{% endif %}
-              {% if post.slidesurl and post.slidesurl != "" %}{% if (post.paperurl and post.paperurl != "") or (post.arxivurl and post.arxivurl != "") or (post.bibtexurl and post.bibtexurl != "") or (post.bibtex and post.bibtex != "") %} | {% endif %}<a href="{{ post.slidesurl }}">Download Slides</a>{% endif %}
-              {% if post.doiurl and post.doiurl != "" %}{% if (post.paperurl and post.paperurl != "") or (post.arxivurl and post.arxivurl != "") or (post.bibtexurl and post.bibtexurl != "") or (post.bibtex and post.bibtex != "") or (post.slidesurl and post.slidesurl != "") %} | {% endif %}<a href="{{ post.doiurl }}">DOI</a>{% endif %}
+              {% if post.doiurl and post.doiurl != "" %}{% if (post.paperurl and post.paperurl != "") or (post.arxivurl and post.arxivurl != "") or (post.bibtexurl and post.bibtexurl != "") %} | {% endif %}<a href="{{ post.doiurl }}">DOI</a>{% endif %}
             {% endif %}
             
             <!-- Add abstract on new line if it exists -->
