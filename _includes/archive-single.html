@@ -33,7 +33,7 @@
       <h2 class="archive__item-title" itemprop="headline">
           <a href="{{ post.link }}">{{ title | default: "Untitled" }}</a> <a href="{{ base_path }}{{ post.url }}" rel="permalink"><i class="fa fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
       </h2>
-          {% else %}
+    {% else %}
       <h2 class="archive__item-title" itemprop="headline">
         <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title | default: "Untitled" }}</a>
       </h2>
@@ -63,10 +63,28 @@
             <!-- Add links on new line if any exist -->
             {% if post.paperurl or post.arxivurl or post.bibtexurl or post.doiurl %}
               <br>
-              {% if post.paperurl and post.paperurl != "" %}<a href="{{ post.paperurl }}">Download</a>{% endif %}
-              {% if post.arxivurl and post.arxivurl != "" %}{% if post.paperurl and post.paperurl != "" %} A {% endif %}<a href="{{ post.arxivurl }}">arXiv</a>{% endif %}
-              {% if post.bibtexurl and post.bibtexurl != "" %}{% if (post.paperurl and post.paperurl != "") or (post.arxivurl and post.arxivurl != "") %} B {% endif %}<a href="{{ post.bibtexurl }}">BibTeX</a>{% endif %}
-              {% if post.doiurl and post.doiurl != "" %}{% if (post.paperurl and post.paperurl != "") or (post.arxivurl and post.arxivurl != "") or (post.bibtexurl and post.bibtexurl != "") %} C {% endif %}<a href="{{ post.doiurl }}">DOI</a>{% endif %}
+              {% assign has_paper = false %}
+              {% assign has_arxiv = false %}
+              {% assign has_bibtex = false %}
+              
+              {% if post.paperurl and post.paperurl != "" %}
+                <a href="{{ post.paperurl }}">Download</a>
+                {% assign has_paper = true %}
+              {% endif %}
+              
+              {% if post.arxivurl and post.arxivurl != "" %}
+                {% if has_paper %} | {% endif %}<a href="{{ post.arxivurl }}">arXiv</a>
+                {% assign has_arxiv = true %}
+              {% endif %}
+              
+              {% if post.bibtexurl and post.bibtexurl != "" %}
+                {% if has_paper or has_arxiv %} | {% endif %}<a href="{{ post.bibtexurl }}">BibTeX</a>
+                {% assign has_bibtex = true %}
+              {% endif %}
+              
+              {% if post.doiurl and post.doiurl != "" %}
+                {% if has_paper or has_arxiv or has_bibtex %} | {% endif %}<a href="{{ post.doiurl }}">DOI</a>
+              {% endif %}
             {% endif %}
             
             <!-- Add abstract on new line if it exists -->
