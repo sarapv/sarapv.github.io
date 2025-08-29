@@ -59,9 +59,7 @@
             <!-- Add links on new line if any exist -->
             {% assign has_links = false %}
             {% if post.paperurl and post.paperurl != "" %}{% assign has_links = true %}{% endif %}
-            {% if post.slidesurl and post.slidesurl != "" %}{% assign has_links = true %}{% endif %}
             {% if post.bibtexurl and post.bibtexurl != "" %}{% assign has_links = true %}{% endif %}
-            {% if post.bibtex and post.bibtex != "" %}{% assign has_links = true %}{% endif %}
             {% if post.arxivurl and post.arxivurl != "" %}{% assign has_links = true %}{% endif %}
             {% if post.doiurl and post.doiurl != "" %}{% assign has_links = true %}{% endif %}
             
@@ -69,7 +67,7 @@
               <br>
               {% if post.paperurl and post.paperurl != "" %}<a href="{{ post.paperurl }}">Download</a>{% endif %}
               {% if post.arxivurl and post.arxivurl != "" %}{% if post.paperurl and post.paperurl != "" %} | {% endif %}<a href="{{ post.arxivurl }}">arXiv</a>{% endif %}
-              {% if post.bibtexurl and post.bibtexurl != "" %}{% if (post.paperurl and post.paperurl != "") or (post.arxivurl and post.arxivurl != "") %} | {% endif %}<a href="{{ post.bibtexurl }}" target="_blank">BibTeX</a>{% endif %}
+              {% if post.bibtexurl and post.bibtexurl != "" %}{% if (post.paperurl and post.paperurl != "") or (post.arxivurl and post.arxivurl != "") %} | {% endif %}<a href="{{ post.bibtexurl }}">BibTeX</a>{% endif %}
               {% if post.doiurl and post.doiurl != "" %}{% if (post.paperurl and post.paperurl != "") or (post.arxivurl and post.arxivurl != "") or (post.bibtexurl and post.bibtexurl != "") %} | {% endif %}<a href="{{ post.doiurl }}">DOI</a>{% endif %}
             {% endif %}
             
