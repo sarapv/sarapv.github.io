@@ -1,0 +1,8 @@
+@inproceedings{perez2020nested,
+  title={A nested hybrid filter for parameter estimation and state tracking in homogeneous multi-scale models},
+  author={P{\'e}rez-Vieites, Sara and M{\'\i}guez, Joaqu{\'\i}n},
+  booktitle={2020 IEEE 23rd International Conference on Information Fusion (FUSION)},
+  pages={1--8},
+  year={2020},
+  organization={IEEE}
+}
