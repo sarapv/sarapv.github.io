@@ -262,6 +262,12 @@ body:hover .visually-hidden button {
     color: $mastodon-color;
   }
 
+  html:not([data-theme="dark"]) .social-icons {
+    .ai-orcid,
+    .ai-orcid-square {
+      color: $orcid-color;
+    }
+  }
   // .ai-orcid,
   // .ai-orcid-square {
   //   color: $orcid-color;
@@ -317,6 +323,9 @@ body:hover .visually-hidden button {
     color: $xing-color;
   }
 }
+
+
+/* ORCID inherits theme color in dark theme (automatically happens) */
 
 
 /*
