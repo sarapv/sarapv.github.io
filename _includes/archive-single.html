@@ -49,7 +49,18 @@
         <div style="display: flex; align-items: flex-start;">
           <span style="margin-right: 0.5em; margin-top: 0.1em;">•</span>
           <div style="flex: 1;">
-            <strong>{{ post.title | default: "Teaching contribution" }}</strong>, <i>{{ post.course | default: "course name" }}</i>, {{ post.venue | default: "Unknown Venue" }} ({{ post.starting_date | default: "1900-01-01" | date: "%Y" }}, {{ post.ending_date | default: "1900-01-01" | date: "%Y" }})
+            <strong>{{ post.title | default: "Teaching contribution" }}</strong>, <i>{{ post.course | default: "course name" }}</i>, {{ post.venue | default: "Unknown Venue" }} ({{ post.starting_date | default: "1877-01-01" | date: "%Y" }}, {{ post.ending_date | default: "1878-01-01" | date: "%Y" }})
+            {% if post.description and post.description != "" %}
+              <br>
+              <span style="margin-left: 1em;">
+                <details class="abstract-toggle" style="display: inline-block;">
+                  <summary style="cursor: pointer;"><strong>Description</strong></summary>
+                  <div class="abstract-content arithmatex" style="margin-top: 0.5em; margin-left: 1em;">
+                    {{ post.description | markdownify }}
+                  </div>
+                </details>
+              </span>
+            {% endif %}
           </div>
         </div>
       </div>
