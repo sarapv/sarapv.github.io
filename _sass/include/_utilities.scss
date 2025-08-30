@@ -322,7 +322,7 @@ body:hover .visually-hidden button {
 html[data-theme="dark"] .social-icons {
   .ai-orcid,
   .ai-orcid-square {
-    color: inherit;
+    color: inherit !important;
   }
 }
 
