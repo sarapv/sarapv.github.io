@@ -2,7 +2,7 @@
 title: "Teaching Assistant"
 course: "Linear Networks Analysis and Synthesis"
 collection: teaching
-category: teaching
+category: lectures
 #permalink: /teaching/2014-spring-teaching-1
 venue: "Universidad Carlos III de Madrid"
 starting_date: 2017-09-01
