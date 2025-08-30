@@ -45,7 +45,14 @@
     {% endif %}
 
     {% if post.collection == 'teaching' %}
-      <p> {{ post.type | default: "Course" }}, <i>{{ post.venue | default: "Unknown Venue" }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
+      <div style="margin-bottom: 0.75em; margin-left: 0; position: relative;">
+        <div style="display: flex; align-items: flex-start;">
+          <span style="margin-right: 0.5em; margin-top: 0.1em;">•</span>
+          <div style="flex: 1;">
+            <strong>{{ post.title | default: "Teaching contribution" }}</strong>, <i>{{ post.course | default: "course name" }}</i>, {{ post.venue | default: "Unknown Venue" }} ({{ post.starting_date | default: "1900-01-01" | date: "%Y" }}, {{ post.ending_date | default: "1900-01-01" | date: "%Y" }})
+          </div>
+        </div>
+      </div>
     {% elsif post.collection == 'publications' %}
       <!-- Display publication as proper list item with citation -->
       <div style="margin-bottom: 0.75em; margin-left: 0; position: relative;">
