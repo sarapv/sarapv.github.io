@@ -86,10 +86,12 @@
               
               {% if post.doiurl and post.doiurl != "" %}
                 {% if has_paper or has_arxiv or has_bibtex %} | {% endif %}<a href="{{ post.doiurl }}" style="text-decoration: none;">DOI</a>
+                {% assign has_doi = true %}
               {% endif %}
 
               {% if post.slidesurl and post.slidesurl != "" %}
                 {% if has_paper or has_arxiv or has_bibtex or has_doi %} | {% endif %}<a href="{{ post.slidesurl }}" style="text-decoration: none;">Slides</a>
+                {% assign has_slides = true %}
               {% endif %}
 
               {% if post.code and post.code != "" %}
