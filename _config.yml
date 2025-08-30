@@ -89,6 +89,12 @@ publication_category:
   thesis:
     title: 'Theses'
 
+teaching_category:
+  supervision:
+    title: 'Supervision'
+  teaching:
+    title: 'Teaching'
+
 # Site Settings
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
 breadcrumbs              : false # true, false (default)
