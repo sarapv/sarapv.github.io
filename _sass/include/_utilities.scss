@@ -262,10 +262,10 @@ body:hover .visually-hidden button {
     color: $mastodon-color;
   }
 
-  .ai-orcid,
-  .ai-orcid-square {
-    color: $orcid-color;
-  }
+  // .ai-orcid,
+  // .ai-orcid-square {
+  //   color: $orcid-color;
+  // }
 
   .fa-pinterest,
   .fa-pinterest-p,
@@ -315,14 +315,6 @@ body:hover .visually-hidden button {
   .fa-xing,
   .fa-xing-square {
     color: $xing-color;
-  }
-}
-
-/* Theme-specific icon overrides */
-html[data-theme="dark"] .social-icons {
-  .ai-orcid,
-  .ai-orcid-square {
-    color: inherit !important;
   }
 }
 
