@@ -227,11 +227,11 @@ body:hover .visually-hidden button {
     color: $foursquare-color;
   }
 
-  .fa-github,
-  .fa-github-alt,
-  .fa-github-square {
-    color: $github-color;
-  }
+  // .fa-github,
+  // .fa-github-alt,
+  // .fa-github-square {
+  //   color: $github-color;
+  // }
 
   .fa-google-plus,
   .fa-google-plus-square {
@@ -262,16 +262,16 @@ body:hover .visually-hidden button {
     color: $mastodon-color;
   }
 
-  html:not([data-theme="dark"]) .social-icons {
-    .ai-orcid,
-    .ai-orcid-square {
-      color: $orcid-color;
-    }
-  }
-  // .ai-orcid,
-  // .ai-orcid-square {
-  //   color: $orcid-color;
+  // html:not([data-theme="dark"]) .social-icons {
+  //   .ai-orcid,
+  //   .ai-orcid-square {
+  //     color: $orcid-color;
+  //   }
   // }
+  .ai-orcid,
+  .ai-orcid-square {
+    color: $orcid-color;
+  }
 
   .fa-pinterest,
   .fa-pinterest-p,
