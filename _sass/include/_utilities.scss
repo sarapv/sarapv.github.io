@@ -318,6 +318,14 @@ body:hover .visually-hidden button {
   }
 }
 
+/* Theme-specific icon overrides */
+html[data-theme="dark"] .social-icons {
+  .ai-orcid,
+  .ai-orcid-square {
+    color: inherit;
+  }
+}
+
 
 /*
    Navicons
