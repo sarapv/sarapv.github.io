@@ -90,10 +90,10 @@ publication_category:
     title: 'Theses'
 
 teaching_category:
-  supervision:
-    title: 'Supervision'
   lectures:
     title: 'Teaching'
+  supervision:
+    title: 'Supervision'
 
 # Site Settings
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"

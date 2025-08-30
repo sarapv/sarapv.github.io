@@ -2,7 +2,7 @@
 title: "Guest lecturer"
 course: "Digital and Optimal Control"
 collection: teaching
-category: supervision
+category: lectures
 #permalink: /teaching/2014-spring-teaching-1
 venue: "Aalto University"
 starting_date: 2024-09-01
