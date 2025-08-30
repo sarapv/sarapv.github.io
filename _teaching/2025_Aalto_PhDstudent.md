@@ -7,5 +7,5 @@ category: supervision
 venue: "Aalto University"
 starting_date: 2025-03-01
 ending_date: 2029-05-15
-description: 'PhD focused on Bayesian experimental design (BED) and control in industrial applications (collaborating with <a href="https://new.abb.com/fi/en">ABB</a>).'
+description: '<a href="https://www.linkedin.com/in/juri-voloskin-44099058/?originalSubdomain=fi">Juri Voloskin</a> will focus on Bayesian experimental design (BED) and control in industrial applications (collaborating with <a href="https://new.abb.com/fi/en">ABB</a>).'
 ---
