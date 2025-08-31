@@ -49,7 +49,7 @@
         <div style="display: flex; align-items: flex-start;">
           <span style="margin-right: 0.5em; margin-top: 0.1em;">•</span>
           <div style="flex: 1;">
-            <strong>{{ post.title | default: "Teaching contribution" }}</strong>, {{ post.venue | default: "Unknown Venue" }} ({{ post.starting_date | default: "1877-01-01" | date: "%Y" }}-{{ post.ending_date | default: "1878-01-01" | date: "%Y" }})
+            <strong>{{ post.title | default: "Teaching contribution" }}</strong>, {{ post.venue | default: "Unknown Venue" }}{% if post.ending_date and post.ending_date != "" %}{% assign start_year = post.starting_date | date: "%Y" %}{% assign end_year = post.ending_date | date: "%Y" %}{% if start_year == end_year %} ({{ post.starting_date | date: "%b" }}-{{ post.ending_date | date: "%b %Y" }}){% else %} ({{ post.starting_date | date: "%Y" }}-{{ post.ending_date | date: "%Y" }}){% endif %}{% else %} ({{ post.starting_date | default: "1877-01-01" | date: "%Y" }}){% endif %}
             {% if post.description and post.description != "" %}
               <br>
               {{ post.description }}
