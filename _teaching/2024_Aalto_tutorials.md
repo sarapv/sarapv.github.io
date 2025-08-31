@@ -1,5 +1,5 @@
 ---
-title: "Mini-turotials on Monte Carlo methods"
+title: "Mini-tutorials on Monte Carlo methods"
 course: "MC, IS and SMC"
 collection: teaching
 category: lectures
