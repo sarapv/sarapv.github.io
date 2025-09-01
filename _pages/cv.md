@@ -9,4 +9,4 @@ redirect_from:
 
 You can download my CV here:
 
-**[Download CV (PDF)](/files/cv/SaraPerezVieites_CV.pdf)**
+**[Download CV (PDF)](/files/cv/202509_CV.pdf)**
