@@ -81,12 +81,12 @@
               {% assign has_slides = false %}
               
               {% if post.paperurl and post.paperurl != "" %}
-                <a href="{{ post.paperurl }}" style="text-decoration: color:deeppink;">Download</a>
+                <a href="{{ post.paperurl }}" style="color:deeppink;">Download</a>
                 {% assign has_paper = true %}
               {% endif %}
               
               {% if post.arxivurl and post.arxivurl != "" %}
-                {% if has_paper %} | {% endif %}<a href="{{ post.arxivurl }}" style="text-decoration: color:deeppink;">arXiv</a>
+                {% if has_paper %} | {% endif %}<a href="{{ post.arxivurl }}" style="color:deeppink;">arXiv</a>
                 {% assign has_arxiv = true %}
               {% endif %}
               
