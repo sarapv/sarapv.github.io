@@ -91,22 +91,22 @@
               {% endif %}
               
               {% if post.bibtexurl and post.bibtexurl != "" %}
-                {% if has_paper or has_arxiv %} | {% endif %}<a href="{{ post.bibtexurl }}" style="text-decoration: none;">BibTeX</a>
+                {% if has_paper or has_arxiv %} | {% endif %}<a href="{{ post.bibtexurl }}">BibTeX</a>
                 {% assign has_bibtex = true %}
               {% endif %}
               
               {% if post.doiurl and post.doiurl != "" %}
-                {% if has_paper or has_arxiv or has_bibtex %} | {% endif %}<a href="{{ post.doiurl }}" style="text-decoration: none;">DOI</a>
+                {% if has_paper or has_arxiv or has_bibtex %} | {% endif %}<a href="{{ post.doiurl }}">DOI</a>
                 {% assign has_doi = true %}
               {% endif %}
 
               {% if post.slidesurl and post.slidesurl != "" %}
-                {% if has_paper or has_arxiv or has_bibtex or has_doi %} | {% endif %}<a href="{{ post.slidesurl }}" style="text-decoration: none;">Slides</a>
+                {% if has_paper or has_arxiv or has_bibtex or has_doi %} | {% endif %}<a href="{{ post.slidesurl }}">Slides</a>
                 {% assign has_slides = true %}
               {% endif %}
 
               {% if post.code and post.code != "" %}
-                {% if has_paper or has_arxiv or has_bibtex or has_doi or has_slides %} | {% endif %}<a href="{{ post.code }}" style="text-decoration: none;">Code</a>
+                {% if has_paper or has_arxiv or has_bibtex or has_doi or has_slides %} | {% endif %}<a href="{{ post.code }}">Code</a>
               {% endif %}
               </span>
             {% endif %}
