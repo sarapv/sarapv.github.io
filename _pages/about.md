@@ -21,8 +21,8 @@ If you would like to learn more about my research, I have summarised some of my 
 
 ## News
 
-- **November 2025**: **New preprint** on *online Bayesian experimental design*! [(arXiv)](https://arxiv.org/abs/2511.04403)
-This work was presented at the [AI Day 2025](https://fcai.fi/ai-day-2025) (Aalto Univeristy, **Helsinki**). [(poster)](https://sarapv.github.io/files/poster/202511_AIDay_poster.pdf)
+- **November 2025**: **New preprint** on *online Bayesian experimental design*! <a href="https://arxiv.org/abs/2511.04403" style="color: deeppink;">(arXiv)</a>
+This work was presented at the <a href="https://fcai.fi/ai-day-2025" style="text-decoration: none;">AI Day 2025</a> (Aalto Univeristy, **Helsinki**). [(poster)](https://sarapv.github.io/files/poster/202511_AIDay_poster.pdf)
 - **September 2025**: Presented a poster at the *Workshop on Emerging Trends in Automatic Control* (Aalto University, **Helsinki**), sharing recent work on *online Bayesian experimental design for partially observable dynamical systems*. [(poster)](https://sarapv.github.io/files/poster/202509_Poster_Workshop.pdf)
 - **July 2025**: Excited to visit the Illinois Institute of Technology (**Chicago**, USA) to give a talk in the special session on *Nested expectations: models and estimators* at [MCM 2025](https://fjhickernell.github.io/mcm2025/). [(slides)](http://sarapv.github.io/files/slides/2025_MCM.pdf)
 - **July 2025**: Happy to be back at Universidad Carlos III de **Madrid**, where I gave an invited talk at the [GTS Seminar](https://gts.tsc.uc3m.es/gts-seminars/) and served as committee member for the PhD defense of [José Alberto Martínez-Ordóñez](https://www.linkedin.com/in/jose-alberto-martinez-ordo%C3%B1ez-341607114/). His thesis *Discrete-time nonlinear Markov switching models: stability, inference and physical applications* was a pleasure to read :)
