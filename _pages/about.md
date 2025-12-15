@@ -21,7 +21,7 @@ If you would like to learn more about my research, I have summarised some of my 
 
 ## News
 
-- **November 2025**: **New preprint** on *online Bayesian experimental design*! <a href="https://arxiv.org/abs/2511.04403" style="color: deeppink;">(arXiv)</a>
+- **November 2025**: **New preprint** on *online Bayesian experimental design*! <a href="https://arxiv.org/abs/2511.04403" style="color: coral;">(arXiv)</a>
 This work was presented at the <a href="https://fcai.fi/ai-day-2025" style="text-decoration: none;">AI Day 2025</a> (Aalto Univeristy, **Helsinki**). <a href="https://sarapv.github.io/files/poster/202511_AIDay_poster.pdf" style="color: coral;">(poster)</a>
 - **September 2025**: Presented a poster at the *Workshop on Emerging Trends in Automatic Control* (Aalto University, **Helsinki**), sharing recent work on *online Bayesian experimental design for partially observable dynamical systems*. <a href="https://sarapv.github.io/files/poster/202509_Poster_Workshop.pdf" style="color: coral;">(poster)</a>
 - **July 2025**: Excited to visit the Illinois Institute of Technology (**Chicago**, USA) to give a talk in the special session on *Nested expectations: models and estimators* at <a href="https://fjhickernell.github.io/mcm2025/" style="text-decoration: none;">MCM 2025</a>. <a href="http://sarapv.github.io/files/slides/2025_MCM.pdf" style="color: coral;">(slides)</a>
