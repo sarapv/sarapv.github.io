@@ -9,6 +9,28 @@ author_profile: true
   <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
 {% endif %}
 
+<h2>Selected publications</h2><hr />
+
+<div style="margin-bottom: 0.75em; margin-left: 0; position: relative;">
+        <div style="display: flex; align-items: flex-start;">
+          <span style="margin-right: 0.5em; margin-top: 0.1em;">•</span>
+          <div style="flex: 1;">
+            <strong>Pérez-Vieites, S.</strong>, <a href="https://sahel13.github.io/">Iqbal, S.</a>, <a href="https://users.aalto.fi/~ssarkka/">Särkkä, S.</a>, & <a href="https://baumanndominik.github.io/">Baumann, D.</a> (2025). Online Bayesian Experimental Design for Partially Observed Dynamical Systems. <i>arXiv preprint arXiv:2511.04403</i>.
+            <br>
+            <a href="https://arxiv.org/abs/2511.04403" style="text-decoration: none;">arXiv</a>
+            <br>
+            <div style="margin-left: 1em;">
+              <details class="abstract-toggle" style="display: inline-block;">
+                <summary style="cursor: pointer;"><strong>Abstract</strong></summary>
+                <div class="abstract-content arithmatex" style="margin-top: 0.5em; margin-left: 1em;">
+                  Bayesian experimental design (BED) provides a principled framework for optimizing data collection, but existing approaches do not apply to crucial real-world settings such as dynamical systems with partial observability, where only noisy and incomplete observations are available. These systems are naturally modeled as state-space models (SSMs), where latent states mediate the link between parameters and data, making the likelihood---and thus information-theoretic objectives like the expected information gain (EIG)---intractable. In addition, the dynamical nature of the system requires online algorithms that update posterior distributions and select designs sequentially in a computationally efficient manner. We address these challenges by deriving new estimators of the EIG and its gradient that explicitly marginalize latent states, enabling scalable stochastic optimization in nonlinear SSMs. Our approach leverages nested particle filters (NPFs) for efficient online inference with convergence guarantees. Applications to realistic models, such as the susceptible-infected-recovered (SIR) and a moving source location task, show that our framework successfully handles both partial observability and online computation.
+                </div>
+              </details>
+            </div>
+          </div>
+        </div>
+</div>
+
 {% include base_path %}
 
 <!-- New style rendering if publication categories are defined -->
@@ -31,6 +53,5 @@ author_profile: true
     {% include archive-single.html %}
   {% endfor %}
 {% endif %}
-
 
 
