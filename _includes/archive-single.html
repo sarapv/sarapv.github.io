@@ -81,12 +81,12 @@
               {% assign has_slides = false %}
               
               {% if post.paperurl and post.paperurl != "" %}
-                <a href="{{ post.paperurl }}" style="color:deeppink;">Download</a>
+                <a href="{{ post.paperurl }}" style="color:coral;">Download</a>
                 {% assign has_paper = true %}
               {% endif %}
               
               {% if post.arxivurl and post.arxivurl != "" %}
-                {% if has_paper %} | {% endif %}<a href="{{ post.arxivurl }}" style="color:deeppink;">arXiv</a>
+                {% if has_paper %} | {% endif %}<a href="{{ post.arxivurl }}" style="color:coral;">arXiv</a>
                 {% assign has_arxiv = true %}
               {% endif %}
               
@@ -106,7 +106,7 @@
               {% endif %}
 
               {% if post.code and post.code != "" %}
-                {% if has_paper or has_arxiv or has_bibtex or has_doi or has_slides %} | {% endif %}<a href="{{ post.code }}">Code</a>
+                {% if has_paper or has_arxiv or has_bibtex or has_doi or has_slides %} | {% endif %}<a href="{{ post.code }}" style="color:coral;">Code</a>
               {% endif %}
               </span>
             {% endif %}
