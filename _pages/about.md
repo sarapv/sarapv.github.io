@@ -21,7 +21,7 @@ If you would like to learn more about my research, I have summarised some of my 
 
 ## News
 
--**February 2026**: Excited to start a **new positio as an HIIT postdoctoral fellow at University of Helsinki**! :))
+- **February 2026**: Excited to start a **new positio as an HIIT postdoctoral fellow at University of Helsinki**! :))
 - **November 2025**: **New preprint** on *online Bayesian experimental design*! <a href="https://arxiv.org/abs/2511.04403" style="color: coral;">(arXiv)</a>
 This work was presented at the <a href="https://fcai.fi/ai-day-2025" style="text-decoration: none;">AI Day 2025</a> (Aalto Univeristy, **Helsinki**). <a href="https://sarapv.github.io/files/poster/202511_AIDay_poster.pdf" style="color: coral;">(poster)</a>
 - **September 2025**: Presented a poster at the *Workshop on Emerging Trends in Automatic Control* (Aalto University, **Helsinki**), sharing recent work on *online Bayesian experimental design for partially observable dynamical systems*. <a href="https://sarapv.github.io/files/poster/202509_Poster_Workshop.pdf" style="color: coral;">(poster)</a>
