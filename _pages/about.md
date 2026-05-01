@@ -21,6 +21,7 @@ If you would like to learn more about my research, I have summarised some of my 
 
 ## News
 
+- **May 2026**: Thrilled to share our paper has been accepted in <a href="https://icml.cc/" style="text-decoration: none;">ICML 2026</a>! <a href="https://arxiv.org/abs/2511.04403" style="color: coral;">(arXiv)</a>
 - **March 2026**: Happy to visit the **University of Oxford**, where I had the opportunity to connect with researchers and discuss ongoing work on Bayesian experimental design.
 - **March 2026**: Served as a reviewer for <a href="https://icml.cc/" style="text-decoration: none;">ICML 2026</a>.
 - **February 2026**: My *Marie Skłodowska-Curie Postdoctoral Fellowship proposal* received a <a href="https://sarapv.github.io/files/20260216_SealofExcellence.pdf" style="color: coral;">**Seal of Excellence**</a>!
