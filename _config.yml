@@ -22,7 +22,7 @@ repository               : "sarapv.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile_scotland.png"
+  avatar           : "profile_coruna.jpeg"
   name             : "Sara Pérez-Vieites"
   pronouns         : #"she/her"
   bio              : "I am an HIIT postdoctoral fellow at University of Helsinki, working on approximate inference and Bayesian experimental design."
