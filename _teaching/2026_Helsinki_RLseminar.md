@@ -1,5 +1,5 @@
 ---
-title: "Course coordination of the Reinfocement Learning Seminar Course"
+title: "Course coordination of the Seminar Course on Reinfocement Learning"
 course: "MC, IS and SMC"
 collection: teaching
 category: lectures
