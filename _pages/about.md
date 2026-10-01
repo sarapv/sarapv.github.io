@@ -20,6 +20,8 @@ This research connects fundamental statistical methodology with practical challe
 If you would like to learn more about my research, I have summarised some of my key contributions and ongoing directions in <a href="http://sarapv.github.io/files/slides/202510_PerezVieites_Research.pdf" style="color: coral;">this talk</a>.
 
 ## News
+- **October 2026**: Glad to announce that we got a workshop paper accepted at NeurIPS. *Robust monitoring of changes in sequential Bayesian experimental design*, with <a href="https://branchini.fun/" style="text-decoration: none;">Nicola Branchini</a>, to appear in the <a href="https://e-values-workshop.github.io/" style="text-decoration: none;">E-Values: From Statistics to ML</a> workshop.
+
 - **September 2026**: This autumn, I am co-organizing the <a href="https://studies.helsinki.fi/courses/course-unit/otm-cd3d9006-b808-418c-9e4d-92247b9d5287/DATA20074" style="text-decoration: none;">Seminar in Reinforcement Learning</a> at the University of Helsinki together with <a href="https://petrus-mikkola.github.io/" style="text-decoration: none;">Petrus Mikkola</a>.
 
 - **August 2026**: Happy to have co-organized the <a href="https://www.ellisinstitute.fi/ellis-summer-school-2026" style="text-decoration: none;">ELLIS Summer School 2026: AI for Research</a> in Helsinki, where I also co-taught a tutorial on AI-assisted research workflows.
